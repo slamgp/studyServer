@@ -3,16 +3,15 @@ package server.controlers;
 import java.net.Socket;
 import java.util.HashMap;
 
-import server.controlers.menegers.DefoultManager;
+import server.controlers.menegers.DefaultManager;
 import server.controlers.menegers.RequestManager;
 import server.model.RequestMapper;
-import server.view.CalculatorView;
+import server.view.MainView;
 
 public class RequestController {
 	private final String  GET_REQUEST = "GET";
 	private final String  STARTING_PARAMETRS_SYMBOL = "?";
-    private final CalculatorView calculatorView = new CalculatorView();
-    private final DefoultManager defoultMennager = new DefoultManager();
+    private final MainView mainView = new MainView();
     
     public void parseRequest(String request, Socket socket) {
     	RequestMapper requestMaper = new RequestMapper();
@@ -24,10 +23,11 @@ public class RequestController {
         	if (currentManager != null) {
         		result = currentManager.processing(parametrs);
         	} else {
-        		result = defoultMennager.processing(parametrs);
+            	currentManager = requestMaper.getManager("default");
+        		result = currentManager.processing(parametrs);
         	}
     		if (result != null) {
-    			calculatorView.show(result, socket);
+    			mainView.show(result, socket);
     		}
         }
     }

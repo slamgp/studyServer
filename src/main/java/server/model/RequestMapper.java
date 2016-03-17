@@ -3,6 +3,7 @@ package server.model;
 import java.util.HashMap;
 
 import server.controlers.menegers.CalculatorMeneger;
+import server.controlers.menegers.DefaultManager;
 import server.controlers.menegers.RequestManager;
 
 public class RequestMapper {
@@ -11,6 +12,7 @@ public class RequestMapper {
 	public RequestMapper() {
 		requestMap = new HashMap<String, RequestManager>();
 		requestMap.put("calculator", new CalculatorMeneger());
+		requestMap.put("default", new DefaultManager());
 	}    
 	
 	public RequestManager getManager(String id) {

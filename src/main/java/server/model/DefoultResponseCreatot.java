@@ -12,7 +12,10 @@ public class DefoultResponseCreatot extends ResponseCreator{
 	private String getMainCalculatorBody() {
 		return  "<html><head><title>KOZAK</title></head>"
         		+ "<body>"
-        		+ "<h1>HELLO I AM KOZAK SERVER</h1>"
+        		+ "<h1> <center> HELLO    I     AM      KOZAK      SERVER </center></h1>"
+        		+ "<p><h3> My options: <h3></p>"
+        		+ "<li><h4> <a href = calculator> simple calculator </a> </h4></li>"
+        		+ "<li><h4> <a href = presenter> file presenter  </h4></li>"
         		+ " <body></html>"; 
 	} 
 }
