@@ -1,5 +1,7 @@
 package server.controlers.menegers;
 
+import java.text.DecimalFormat;
+
 import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 
 import server.model.CalculatorResponseCreatot;
@@ -43,7 +45,7 @@ public class CalculatorMeneger implements RequestManager{
 			result[2] = param2;
 			result[3] = "=";
 			try {
-			    result[4] ="" + (Float.parseFloat(param1) + Float.parseFloat(param2));
+			    result[4] ="" + new DecimalFormat("###.##").format((Float.parseFloat(param1) + Float.parseFloat(param2)));
 			} catch (NumberFormatException e) {
 				result[4] = "not correct number!";
 			}
@@ -54,7 +56,7 @@ public class CalculatorMeneger implements RequestManager{
 			result[2] = param2;
 			result[3] = "=";
 			try {
-			    result[4] ="" + (Float.parseFloat(param1) - Float.parseFloat(param2));
+			    result[4] ="" + new DecimalFormat("###.##").format((Float.parseFloat(param1) - Float.parseFloat(param2)));
 			} catch (NumberFormatException e) {
 				result[4] = "not correct number!";
 			}
@@ -65,7 +67,7 @@ public class CalculatorMeneger implements RequestManager{
 			result[2] = param2;
 			result[3] = "=";
 			try {
-			    result[4] ="" + (Float.parseFloat(param1) * Float.parseFloat(param2));				
+			    result[4] ="" + new DecimalFormat("###.##").format((Float.parseFloat(param1) * Float.parseFloat(param2)));				
 			} catch (NumberFormatException e) {
 				result[4] = "not correct number!";
 			}
@@ -76,7 +78,7 @@ public class CalculatorMeneger implements RequestManager{
 			result[2] = param2;
 			result[3] = "=";
 			try {
-			    result[4] ="" + (Float.parseFloat(param1) / Float.parseFloat(param2));				
+			    result[4] ="" + new DecimalFormat("###.##").format((Float.parseFloat(param1) / Float.parseFloat(param2)));				
 			} catch (NumberFormatException e) {
 				result[4] = "not correct number!";
 			}
