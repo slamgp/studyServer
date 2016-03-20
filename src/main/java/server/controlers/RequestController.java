@@ -12,6 +12,7 @@ public class RequestController {
     private final MainView mainView = new MainView();
     
     public void parseRequest(String request, Socket socket) {
+    	
     	RequestMapper requestMaper = new RequestMapper();
         if (request.indexOf(GET_REQUEST) >= 0) {
         	String url = getUrl(request); 

@@ -1,7 +1,6 @@
 package server.model;
 
 import java.util.HashMap;
-
 import server.controlers.menegers.CalculatorMeneger;
 import server.controlers.menegers.DefaultManager;
 import server.controlers.menegers.PresenterMeneger;

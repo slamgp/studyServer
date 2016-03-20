@@ -15,6 +15,7 @@ public abstract class ResponseCreator {
     public String endHtmlFile() {
     	return  "</body>"
     			+ "</html>";
+    	
     }
     
     abstract public String processingParametrs(String []str); 

@@ -1,6 +1,5 @@
 package server.model;
 
-
 public class CalculatorResponseCreatot extends ResponseCreator{
 
 	@Override

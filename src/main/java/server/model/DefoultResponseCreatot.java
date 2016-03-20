@@ -1,6 +1,5 @@
 package server.model;
 
-
 public class DefoultResponseCreatot extends ResponseCreator{
 	@Override
 	public String createResponse() {
