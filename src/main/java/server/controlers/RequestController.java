@@ -1,9 +1,7 @@
 package server.controlers;
 
 import java.net.Socket;
-import java.util.HashMap;
 
-import server.controlers.menegers.DefaultManager;
 import server.controlers.menegers.RequestManager;
 import server.model.RequestMapper;
 import server.view.MainView;

@@ -17,5 +17,15 @@ public class DefoultResponseCreatot extends ResponseCreator{
         		+ "<li><h4> <a href = calculator> simple calculator </a> </h4></li>"
         		+ "<li><h4> <a href = presenter> file presenter  </h4></li>"
         		+ " <body></html>"; 
+	}
+
+	@Override
+	public String processingParametrs(String[] str) {
+		return null;
+	}
+
+	@Override
+	protected String getMainBody() {
+		return null;
 	} 
 }

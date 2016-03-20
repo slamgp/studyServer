@@ -1,6 +1,5 @@
 package server.model;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 public abstract class ResponseCreator {
@@ -18,5 +17,12 @@ public abstract class ResponseCreator {
     			+ "</html>";
     }
     
-    abstract public String createResponse();
+    abstract public String processingParametrs(String []str); 
+    
+    public String createResponse() {
+        String responseBody = getMainBody();
+        return  responseBody;
+    };
+    
+    protected abstract String getMainBody();
 }

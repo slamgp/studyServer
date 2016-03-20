@@ -2,14 +2,9 @@ package server.model;
 
 
 public class CalculatorResponseCreatot extends ResponseCreator{
+
 	@Override
-	public String createResponse() {
-        String responseBody = getMainCalculatorBody();
-        return  responseBody;
-
-	}
-
-	public String addCalculateResult(String []str) {
+	public String processingParametrs(String []str) {
 		String result = "";
 		if (str != null){
 		    result = "<center><table  border = 2>"
@@ -23,8 +18,9 @@ public class CalculatorResponseCreatot extends ResponseCreator{
 		};
 		return result;
 	}
-	
-	private String getMainCalculatorBody() {
+
+	@Override
+	protected String getMainBody() {
 		return  "<html><head><title>KOZAK:CALCULATOR</title></head>"
         		+ "<body>"
         		+ "<h3>Available operations</h3>"

@@ -11,7 +11,6 @@ import server.model.ResponseCreator;
 public class CalculatorMeneger implements RequestManager{
     
 	private final String OPERATION = "operation";
-	private final String VALUE_SPLITER = "=";
 	private final String ADD_OPERATION = "add";
     private final String DIV_OPERATION = "dev";
     private final String SUB_OPERATION = "sub";
@@ -26,7 +25,7 @@ public class CalculatorMeneger implements RequestManager{
         
 	    if (parametrs[1] != null) {
 	        String []requestParametrs = parametrs[1].split("&");
-	        httmlBody = httmlBody +((CalculatorResponseCreatot) responseCreator).addCalculateResult(calculate(requestParametrs));
+	        httmlBody = httmlBody + responseCreator.processingParametrs(calculate(requestParametrs));
 	    }
 	    httmlBody = httmlBody + responseCreator.createResponse();
 	    httpSerponse = responseCreator.createHttpHeader(httmlBody.getBytes().length) + httmlBody;
@@ -35,9 +34,9 @@ public class CalculatorMeneger implements RequestManager{
 
 	private String[] calculate(String[] requestParametrs) {
 		String [] result = new String[5];
-	    String operation = 	requestParametrs[0].substring(requestParametrs[0].indexOf(VALUE_SPLITER)+1);
-	    String param1    = 	requestParametrs[1].substring(requestParametrs[1].indexOf(VALUE_SPLITER)+1);
-	    String param2    = 	requestParametrs[2].substring(requestParametrs[2].indexOf(VALUE_SPLITER)+1);
+	    String operation = 	requestParametrs[0].substring(requestParametrs[0].indexOf(RequestManager.VALUE_SPLITER)+1);
+	    String param1    = 	requestParametrs[1].substring(requestParametrs[1].indexOf(RequestManager.VALUE_SPLITER)+1);
+	    String param2    = 	requestParametrs[2].substring(requestParametrs[2].indexOf(RequestManager.VALUE_SPLITER)+1);
 	    switch (operation) {
 		case ADD_OPERATION:
 			result[0] = param1;
